@@ -37,6 +37,7 @@ steps:
       publishDirectory: $JEST_DIR)
       vstsFeedPublish: sandbox
       vstsFeedPackagePublish: jest-node-modules
+      vstsPackageVersion: 1.0.$(Build.Id)-$(Agent.OS)
 
   # Run test-ci-partial
   - script: yarn run test-ci-partial
