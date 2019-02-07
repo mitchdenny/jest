@@ -34,7 +34,7 @@ steps:
     displayName: Simulated Save Cache
     inputs:
       command: publish
-      publishDirectory: $(System.DefaultWorkingDirectory)
+      publishDirectory: $JEST_DIR)
       vstsFeedPublish: sandbox
       vstsFeedPackagePublish: jest-node-modules
 
