@@ -34,19 +34,19 @@ steps:
       vstsFeedPackage: jest-node-modules
       vstsPackageVersion: 0.0.3
 
-  # Run yarn to install dependencies and build
-  - script: yarn --frozen-lockfile
-    workingDirectory: $(JEST_DIR)
-    displayName: 'Install dependencies and build'
+#  # Run yarn to install dependencies and build
+#  - script: yarn --frozen-lockfile
+#    workingDirectory: $(JEST_DIR)
+#    displayName: 'Install dependencies and build'
     
-  - task: UniversalPackages@0
-    displayName: Simulated Save Cache
-    inputs:
-      command: publish
-      publishDirectory: $(JEST_DIR)/node_modules
-      vstsFeedPublish: sandbox
-      vstsFeedPackagePublish: jest-node-modules
-      vstsPackageVersion: 1.0.$(Build.Id)-$(Agent.OS)
+#  - task: UniversalPackages@0
+#    displayName: Simulated Save Cache
+#    inputs:
+#      command: publish
+#      publishDirectory: $(JEST_DIR)/node_modules
+#      vstsFeedPublish: sandbox
+#      vstsFeedPackagePublish: jest-node-modules
+#      vstsPackageVersion: 1.0.$(Build.Id)-$(Agent.OS)
 
   # Run test-ci-partial
   - script: yarn run test-ci-partial
