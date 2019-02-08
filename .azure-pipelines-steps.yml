@@ -34,10 +34,10 @@ steps:
       vstsFeedPackage: jest-node-modules
       vstsPackageVersion: 0.0.3
 
-#  # Run yarn to install dependencies and build
-#  - script: yarn --frozen-lockfile
-#    workingDirectory: $(JEST_DIR)
-#    displayName: 'Install dependencies and build'
+  # Run yarn to install dependencies and build
+  - script: yarn run build
+    workingDirectory: $(JEST_DIR)
+    displayName: 'Build only'
     
 #  - task: UniversalPackages@0
 #    displayName: Simulated Save Cache
