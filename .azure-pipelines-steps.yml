@@ -35,18 +35,9 @@ steps:
       vstsPackageVersion: 0.0.3
 
   # Run yarn to install dependencies and build
-  - script: yarn run build
+  - script: yarn build
     workingDirectory: $(JEST_DIR)
     displayName: 'Build only'
-    
-#  - task: UniversalPackages@0
-#    displayName: Simulated Save Cache
-#    inputs:
-#      command: publish
-#      publishDirectory: $(JEST_DIR)/node_modules
-#      vstsFeedPublish: sandbox
-#      vstsFeedPackagePublish: jest-node-modules
-#      vstsPackageVersion: 1.0.$(Build.Id)-$(Agent.OS)
 
   # Run test-ci-partial
   - script: yarn run test-ci-partial
