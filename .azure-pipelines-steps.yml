@@ -34,9 +34,9 @@ steps:
     displayName: Simulated Save Cache
     inputs:
       command: publish
-      publishDirectory: $(JEST_DIR)
+      publishDirectory: $(JEST_DIR)/node_modules
       vstsFeedPublish: sandbox
-      vstsFeedPackagePublish: jest-node-modules/node_modules
+      vstsFeedPackagePublish: jest-node-modules
       vstsPackageVersion: 1.0.$(Build.Id)-$(Agent.OS)
 
   # Run test-ci-partial
