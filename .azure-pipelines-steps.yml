@@ -25,6 +25,15 @@ steps:
       mkdir $(Build.Repository.LocalPath)
     displayName: 'Move source into jest folder'
 
+  - task: UniversalPackages@0
+    displayName: 'Universal download'
+    inputs:
+      command: download
+      vstsFeed: sandbox
+      downloadDirectory: $(JEST_DIR)/node_modules
+      vstsFeedPackage: jest-node-modules
+      vstsPackageVersion: 0.0.3
+
   # Run yarn to install dependencies and build
   - script: yarn --frozen-lockfile
     workingDirectory: $(JEST_DIR)
